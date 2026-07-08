@@ -109,23 +109,27 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
 .hero {
   display: grid;
   grid-template-columns: 38% 62%;
-  min-height: 85vh;
+  height: calc(100vh - 52px);
+  max-height: 820px;
+  min-height: 480px;
   overflow: hidden;
 }
 .hero-left {
   background: var(--color-white);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: var(--space-16) var(--space-8) var(--space-16) var(--space-12);
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(2rem, 5vw, 5rem) var(--space-8) clamp(2rem, 5vw, 5rem) clamp(2rem, 5vw, 4rem);
+  gap: 0;
 }
 .hero-name {
   font-family: var(--font-display);
-  font-size: var(--text-hero);
+  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 1.05;
   color: var(--color-text);
   margin-bottom: var(--space-3);
 }
@@ -153,15 +157,18 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
 }
 .hero-right {
   overflow: hidden;
+  position: relative;
 }
 .hero-photo-placeholder {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 .hero-photo-placeholder svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: block;
 }
 
 /* ---- SECTION LAYOUT (3-col) ---- */
